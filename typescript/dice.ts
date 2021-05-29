@@ -1,8 +1,9 @@
-function generateRandomValue(minValue:number, maxValue:number):number{
-    var random = Math.random();
-    
-    //TODO: use random to generate a number between min and max
+function generateRandomValue(minValue:number, maxValue:number):number
+{
+    minValue = Math.ceil(minValue);
+    maxValue = Math.ceil(maxValue);
 
+    var random = Math.floor(Math.random() * (maxValue - minValue + 1) + minValue);
     return random;
 }
 
@@ -20,12 +21,12 @@ window.onload = function(){
     let newGameBtn = document.getElementById("new_game");
     newGameBtn.onclick = createNewGame;
 
-    document.getElementById("roll").onclick = rollDie;
-
-    document.getElementById("hold").onclick = holdDie;
+    $("roll").onclick = rollDie;
+    $("hold").onclick = holdDie;
 }
 
-function createNewGame(){
+function createNewGame()
+{
     //set player 1 and player 2 scores to 0
 
     //verify each player has a name
@@ -40,11 +41,12 @@ function createNewGame(){
     changePlayers();
 }
 
-function rollDie():void{
+function rollDie():void
+{
     let currTotal = parseInt((<HTMLInputElement>document.getElementById("total")).value);
-    
     //roll the die and get a random value 1 - 6 (use generateRandomValue function)
-
+    let diceRoll = generateRandomValue(1,6);
+    
     //if the roll is 1
     //  change players
     //  set current total to 0
@@ -70,4 +72,8 @@ function holdDie():void{
 function $(id:string)
 {
     return document.getElementById(id);
+}
+function getInputElem(id:string):HTMLInputElement
+{
+    return <HTMLInputElement>$(id);
 }
