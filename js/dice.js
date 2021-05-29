@@ -22,11 +22,20 @@ window.onload = function () {
     $("hold").onclick = holdDie;
 };
 function createNewGame() {
-    document.getElementById("turn").classList.add("open");
-    document.getElementById("total").value = "0";
-    document.getElementById("player1").setAttribute("disabled", "disabled");
-    document.getElementById("player2").setAttribute("disabled", "disabled");
-    changePlayers();
+    var goodGame = true;
+    getInputElem("score1").value = "0";
+    getInputElem("score2").value = "0";
+    if (getInputElem("player1").value == "" || getInputElem("player2").value == "") {
+        alert("No name added for either");
+        goodGame = false;
+    }
+    if (goodGame) {
+        document.getElementById("turn").classList.add("open");
+        document.getElementById("total").value = "0";
+        document.getElementById("player1").setAttribute("disabled", "disabled");
+        document.getElementById("player2").setAttribute("disabled", "disabled");
+        changePlayers();
+    }
 }
 function rollDie() {
     var currTotal = parseInt(document.getElementById("total").value);

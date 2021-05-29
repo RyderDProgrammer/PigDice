@@ -17,6 +17,7 @@ function changePlayers():void{
     //Why doesnt this work if leaving currentPlayerName as 
     //$("current").innerText;
     //currentPlayer = player1Name;
+
     //swap from player to player by comparing current name to player names
     //set currentPlayerName to the next player
     if(currentPlayerName.innerText == player1Name)
@@ -39,18 +40,27 @@ window.onload = function(){
 
 function createNewGame()
 {
+    let goodGame = true;
     //set player 1 and player 2 scores to 0
-
+    getInputElem("score1").value = "0";
+    getInputElem("score2").value = "0";
     //verify each player has a name
     //if both players don't have a name display error
-
+    if(getInputElem("player1").value == "" || getInputElem("player2").value == "")
+    {
+        alert("No name added for either");
+        goodGame = false;
+    }
     //if both players do have a name start the game!
-    document.getElementById("turn").classList.add("open");
-    (<HTMLInputElement>document.getElementById("total")).value = "0";
-    //lock in player names and then change players
-    document.getElementById("player1").setAttribute("disabled", "disabled");
-    document.getElementById("player2").setAttribute("disabled", "disabled");
-    changePlayers();
+    if(goodGame)
+    {
+        document.getElementById("turn").classList.add("open");
+        (<HTMLInputElement>document.getElementById("total")).value = "0";
+        //lock in player names and then change players
+        document.getElementById("player1").setAttribute("disabled", "disabled");
+        document.getElementById("player2").setAttribute("disabled", "disabled");
+        changePlayers();
+    }
 }
 
 function rollDie():void
