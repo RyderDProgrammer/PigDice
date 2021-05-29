@@ -5,9 +5,10 @@ function generateRandomValue(minValue, maxValue) {
     return random;
 }
 function changePlayers() {
-    var currentPlayerName = document.getElementById("current").innerText;
+    var currentPlayerName = $("current");
     var player1Name = document.getElementById("player1").value;
     var player2Name = document.getElementById("player2").value;
+    currentPlayerName.innerHTML = player1Name.toString();
 }
 window.onload = function () {
     var newGameBtn = document.getElementById("new_game");
@@ -25,6 +26,8 @@ function createNewGame() {
 function rollDie() {
     var currTotal = parseInt(document.getElementById("total").value);
     var diceRoll = generateRandomValue(1, 6);
+    console.log(diceRoll);
+    getInputElem("die").value = diceRoll.toString();
 }
 function holdDie() {
     changePlayers();

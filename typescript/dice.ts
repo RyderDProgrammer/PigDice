@@ -9,12 +9,14 @@ function generateRandomValue(minValue:number, maxValue:number):number
 
 
 function changePlayers():void{
-    let currentPlayerName = document.getElementById("current").innerText;
+    let currentPlayerName = <HTMLElement>$("current");
     let player1Name = (<HTMLInputElement>document.getElementById("player1")).value;
     let player2Name = (<HTMLInputElement>document.getElementById("player2")).value;
 
+    currentPlayerName.innerHTML = player1Name.toString();
     //swap from player to player by comparing current name to player names
     //set currentPlayerName to the next player
+    //if()
 }
 
 window.onload = function(){
@@ -46,7 +48,8 @@ function rollDie():void
     let currTotal = parseInt((<HTMLInputElement>document.getElementById("total")).value);
     //roll the die and get a random value 1 - 6 (use generateRandomValue function)
     let diceRoll = generateRandomValue(1,6);
-    
+    console.log(diceRoll);
+    getInputElem("die").value = diceRoll.toString();
     //if the roll is 1
     //  change players
     //  set current total to 0
