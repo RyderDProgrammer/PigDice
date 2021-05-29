@@ -26,3 +26,6 @@ function rollDie() {
 function holdDie() {
     changePlayers();
 }
+function $(id) {
+    return document.getElementById(id);
+}

@@ -66,3 +66,8 @@ function holdDie():void{
     //change players
     changePlayers();
 }
+
+function $(id:string)
+{
+    return document.getElementById(id);
+}
