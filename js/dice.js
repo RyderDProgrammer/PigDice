@@ -6,9 +6,14 @@ function generateRandomValue(minValue, maxValue) {
 }
 function changePlayers() {
     var currentPlayerName = $("current");
-    var player1Name = document.getElementById("player1").value;
-    var player2Name = document.getElementById("player2").value;
-    currentPlayerName.innerHTML = player1Name.toString();
+    var player1Name = getInputElem("player1").value;
+    var player2Name = getInputElem("player2").value;
+    if (currentPlayerName.innerText == player1Name) {
+        currentPlayerName.innerText = player2Name;
+    }
+    else {
+        currentPlayerName.innerText = player1Name;
+    }
 }
 window.onload = function () {
     var newGameBtn = document.getElementById("new_game");
