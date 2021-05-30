@@ -73,8 +73,8 @@ function rollDie():void
     //  set current total to 0
     if(diceRoll == 1)
     {
-        currTotal = 0;
-        changePlayers();
+        //currTotal = 0;
+        //changePlayers();
     }
     //if the roll is greater than 1
     //  add roll value to current total
@@ -91,9 +91,19 @@ function rollDie():void
 
 function holdDie():void{
     //get the current turn total
-    let currTotal = parseInt(getInputElem("total").value)
+    let currTotal = parseInt((<HTMLInputElement>$("total")).value);
     //determine who the current player is
+    let currentPlayer = 0;
+    if($("current").innerHTML == getInputElem("player1").value)
+    {
+        currentPlayer = parseInt(getInputElem("score1").value);
+    }
+    else
+    {
+        currentPlayer = parseInt(getInputElem("score2").value);
+    }
     //add the current turn total to the player's total score
+    currentPlayer += currTotal;
 
     //reset the turn total to 0
     getInputElem("total").value = "0";

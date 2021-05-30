@@ -41,8 +41,6 @@ function rollDie() {
     var currTotal = parseInt(getInputElem("total").value);
     var diceRoll = generateRandomValue(1, 6);
     if (diceRoll == 1) {
-        currTotal = 0;
-        changePlayers();
     }
     else {
         currTotal += diceRoll;
@@ -51,7 +49,15 @@ function rollDie() {
     getInputElem("total").value = currTotal.toString();
 }
 function holdDie() {
-    var currTotal = parseInt(getInputElem("total").value);
+    var currTotal = parseInt($("total").value);
+    var currentPlayer = 0;
+    if ($("current").innerHTML == getInputElem("player1").value) {
+        currentPlayer = parseInt(getInputElem("score1").value);
+    }
+    else {
+        currentPlayer = parseInt(getInputElem("score2").value);
+    }
+    currentPlayer += currTotal;
     getInputElem("total").value = "0";
     changePlayers();
 }
