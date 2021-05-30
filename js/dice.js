@@ -26,7 +26,7 @@ function createNewGame() {
     getInputElem("score1").value = "0";
     getInputElem("score2").value = "0";
     if (getInputElem("player1").value == "" || getInputElem("player2").value == "") {
-        alert("No name added for either");
+        alert("Need 2 players names");
         goodGame = false;
     }
     if (goodGame) {
@@ -38,12 +38,21 @@ function createNewGame() {
     }
 }
 function rollDie() {
-    var currTotal = parseInt(document.getElementById("total").value);
+    var currTotal = parseInt(getInputElem("total").value);
     var diceRoll = generateRandomValue(1, 6);
-    console.log(diceRoll);
+    if (diceRoll == 1) {
+        currTotal = 0;
+        changePlayers();
+    }
+    else {
+        currTotal += diceRoll;
+    }
     getInputElem("die").value = diceRoll.toString();
+    getInputElem("total").value = currTotal.toString();
 }
 function holdDie() {
+    var currTotal = parseInt(getInputElem("total").value);
+    getInputElem("total").value = "0";
     changePlayers();
 }
 function $(id) {

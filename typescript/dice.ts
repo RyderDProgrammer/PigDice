@@ -48,7 +48,7 @@ function createNewGame()
     //if both players don't have a name display error
     if(getInputElem("player1").value == "" || getInputElem("player2").value == "")
     {
-        alert("No name added for either");
+        alert("Need 2 players names");
         goodGame = false;
     }
     //if both players do have a name start the game!
@@ -65,29 +65,38 @@ function createNewGame()
 
 function rollDie():void
 {
-    let currTotal = parseInt((<HTMLInputElement>document.getElementById("total")).value);
+    let currTotal = parseInt(getInputElem("total").value);
     //roll the die and get a random value 1 - 6 (use generateRandomValue function)
     let diceRoll = generateRandomValue(1,6);
-    console.log(diceRoll);
-    getInputElem("die").value = diceRoll.toString();
     //if the roll is 1
     //  change players
     //  set current total to 0
-    
+    if(diceRoll == 1)
+    {
+        currTotal = 0;
+        changePlayers();
+    }
     //if the roll is greater than 1
     //  add roll value to current total
+    else
+    {
+        currTotal += diceRoll;
+    }
 
     //set the die roll to value player rolled
+    getInputElem("die").value = diceRoll.toString();
     //display current total on form
+    getInputElem("total").value = currTotal.toString();
 }
 
 function holdDie():void{
     //get the current turn total
+    let currTotal = parseInt(getInputElem("total").value)
     //determine who the current player is
     //add the current turn total to the player's total score
 
     //reset the turn total to 0
-
+    getInputElem("total").value = "0";
     //change players
     changePlayers();
 }
