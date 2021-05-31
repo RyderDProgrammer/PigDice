@@ -52,14 +52,21 @@ function rollDie() {
 }
 function holdDie() {
     var currTotal = parseInt($("total").value);
-    var currentPlayer = 0;
+    var playerScore = 0;
     if ($("current").innerHTML == getInputElem("player1").value) {
-        currentPlayer = parseInt(getInputElem("score1").value);
+        playerScore = parseInt(getInputElem("score1").value);
     }
     else {
-        currentPlayer = parseInt(getInputElem("score2").value);
+        playerScore = parseInt(getInputElem("score2").value);
     }
-    currentPlayer += currTotal;
+    if ($("current").innerHTML == getInputElem("player1").value) {
+        playerScore += currTotal;
+        getInputElem("score1").value = playerScore.toString();
+    }
+    else {
+        playerScore += currTotal;
+        getInputElem("score2").value = playerScore.toString();
+    }
     getInputElem("total").value = "0";
     changePlayers();
 }

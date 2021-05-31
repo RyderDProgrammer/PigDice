@@ -93,18 +93,26 @@ function holdDie():void{
     //get the current turn total
     let currTotal = parseInt((<HTMLInputElement>$("total")).value);
     //determine who the current player is
-    let currentPlayer = 0;
+    let playerScore = 0;
     if($("current").innerHTML == getInputElem("player1").value)
     {
-        currentPlayer = parseInt(getInputElem("score1").value);
+        playerScore = parseInt(getInputElem("score1").value);
     }
     else
     {
-        currentPlayer = parseInt(getInputElem("score2").value);
+        playerScore = parseInt(getInputElem("score2").value);
     }
     //add the current turn total to the player's total score
-    currentPlayer += currTotal;
-
+    if($("current").innerHTML == getInputElem("player1").value)
+    {
+        playerScore += currTotal;
+        getInputElem("score1").value = playerScore.toString();
+    }
+    else
+    {
+        playerScore += currTotal;
+        getInputElem("score2").value = playerScore.toString()
+    }
     //reset the turn total to 0
     getInputElem("total").value = "0";
     //change players
