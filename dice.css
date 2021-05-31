@@ -23,9 +23,9 @@ input {
 fieldset {
     margin-bottom: 1em;
 }
-/* #turn {
+#turn {
     display: none;
-} */
+} 
 #turn.open {
     display: block;
 }

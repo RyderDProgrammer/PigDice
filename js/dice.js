@@ -40,15 +40,15 @@ function createNewGame() {
 function rollDie() {
     var currTotal = parseInt(getInputElem("total").value);
     var diceRoll = generateRandomValue(1, 6);
-    var diceValue = parseInt(getInputElem("die").value);
     if (diceRoll == 1) {
+        currTotal = 0;
+        changePlayers();
     }
     else {
         currTotal += diceRoll;
     }
     getInputElem("die").value = diceRoll.toString();
-    var totalNum = parseInt(getInputElem("total").value);
-    totalNum = currTotal;
+    getInputElem("total").value = currTotal.toString();
 }
 function holdDie() {
     var currTotal = parseInt($("total").value);
