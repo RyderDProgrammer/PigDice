@@ -31,7 +31,7 @@ function createNewGame() {
     }
     if (goodGame) {
         document.getElementById("turn").classList.add("open");
-        document.getElementById("total").value = "0";
+        getInputElem("total").value = "0";
         document.getElementById("player1").setAttribute("disabled", "disabled");
         document.getElementById("player2").setAttribute("disabled", "disabled");
         changePlayers();
@@ -40,13 +40,15 @@ function createNewGame() {
 function rollDie() {
     var currTotal = parseInt(getInputElem("total").value);
     var diceRoll = generateRandomValue(1, 6);
+    var diceValue = parseInt(getInputElem("die").value);
     if (diceRoll == 1) {
     }
     else {
         currTotal += diceRoll;
     }
     getInputElem("die").value = diceRoll.toString();
-    getInputElem("total").value = currTotal.toString();
+    var totalNum = parseInt(getInputElem("total").value);
+    totalNum = currTotal;
 }
 function holdDie() {
     var currTotal = parseInt($("total").value);

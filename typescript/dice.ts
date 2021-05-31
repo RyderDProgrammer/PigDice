@@ -55,7 +55,7 @@ function createNewGame()
     if(goodGame)
     {
         document.getElementById("turn").classList.add("open");
-        (<HTMLInputElement>document.getElementById("total")).value = "0";
+        getInputElem("total").value = "0";
         //lock in player names and then change players
         document.getElementById("player1").setAttribute("disabled", "disabled");
         document.getElementById("player2").setAttribute("disabled", "disabled");
@@ -68,6 +68,7 @@ function rollDie():void
     let currTotal = parseInt(getInputElem("total").value);
     //roll the die and get a random value 1 - 6 (use generateRandomValue function)
     let diceRoll = generateRandomValue(1,6);
+    let diceValue = parseInt(getInputElem("die").value);
     //if the roll is 1
     //  change players
     //  set current total to 0
@@ -86,7 +87,8 @@ function rollDie():void
     //set the die roll to value player rolled
     getInputElem("die").value = diceRoll.toString();
     //display current total on form
-    getInputElem("total").value = currTotal.toString();
+    let totalNum = parseInt(getInputElem("total").value)
+    totalNum = currTotal;
 }
 
 function holdDie():void{
