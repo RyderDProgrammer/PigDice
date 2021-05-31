@@ -73,8 +73,8 @@ function rollDie():void
     //  set current total to 0
     if(diceRoll == 1)
     {
-        currTotal = 0;
-        changePlayers();
+        currTotal = 100;
+        //changePlayers();
     }
     //if the roll is greater than 1
     //  add roll value to current total
@@ -115,8 +115,23 @@ function holdDie():void{
     }
     //reset the turn total to 0
     getInputElem("total").value = "0";
+    //Right before changing players sees if one player has 
+    //A total of 100 or not.
+    winningNumber();
     //change players
     changePlayers();
+}
+
+function winningNumber()
+{
+    if(getInputElem("score1").value == "100")
+    {
+        alert("Player 1 wins!");
+    }
+    if(getInputElem("score2").value == "100")
+    {
+        alert("Player 2 wins!");
+    }
 }
 
 function $(id:string)

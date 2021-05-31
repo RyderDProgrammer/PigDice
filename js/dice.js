@@ -41,8 +41,7 @@ function rollDie() {
     var currTotal = parseInt(getInputElem("total").value);
     var diceRoll = generateRandomValue(1, 6);
     if (diceRoll == 1) {
-        currTotal = 0;
-        changePlayers();
+        currTotal = 100;
     }
     else {
         currTotal += diceRoll;
@@ -68,7 +67,16 @@ function holdDie() {
         getInputElem("score2").value = playerScore.toString();
     }
     getInputElem("total").value = "0";
+    winningNumber();
     changePlayers();
+}
+function winningNumber() {
+    if (getInputElem("score1").value == "100") {
+        alert("Player 1 wins!");
+    }
+    if (getInputElem("score2").value == "100") {
+        alert("Player 2 wins!");
+    }
 }
 function $(id) {
     return document.getElementById(id);
