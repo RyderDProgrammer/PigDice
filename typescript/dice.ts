@@ -12,12 +12,7 @@ function changePlayers():void{
     let currentPlayerName = $("current");
     let player1Name = getInputElem("player1").value;
     let player2Name = getInputElem("player2").value;
-
-    //currentPlayerName.innerHTML = player1Name.toString();
-    //Why doesnt this work if leaving currentPlayerName as 
-    //$("current").innerText;
-    //currentPlayer = player1Name;
-
+    
     //swap from player to player by comparing current name to player names
     //set currentPlayerName to the next player
     if(currentPlayerName.innerText == player1Name)
