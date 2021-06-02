@@ -76,9 +76,14 @@ function winningNumber() {
     var player2Score = parseInt(getInputElem("score2").value);
     if (player1Score >= 100) {
         alert("Player 1 wins!");
+        getInputElem("score1").value = "0";
+        getInputElem("score2").value = "0";
+        changePlayers();
     }
     if (player2Score >= 100) {
         alert("Player 2 wins!");
+        getInputElem("score1").value = "0";
+        getInputElem("score2").value = "0";
     }
 }
 function $(id) {
