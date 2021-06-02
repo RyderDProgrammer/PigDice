@@ -68,8 +68,8 @@ function rollDie():void
     //  set current total to 0
     if(diceRoll == 1)
     {
-        currTotal = 100;
-        //changePlayers();
+        currTotal = 0;
+        changePlayers();
     }
     //if the roll is greater than 1
     //  add roll value to current total
@@ -119,11 +119,13 @@ function holdDie():void{
 
 function winningNumber()
 {
-    if(getInputElem("score1").value == "100")
+    let player1Score = parseInt(getInputElem("score1").value);
+    let player2Score = parseInt(getInputElem("score2").value);
+    if(player1Score >= 10)
     {
         alert("Player 1 wins!");
     }
-    if(getInputElem("score2").value == "100")
+    if(player2Score >= 10)
     {
         alert("Player 2 wins!");
     }
