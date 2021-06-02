@@ -74,10 +74,10 @@ function holdDie() {
 function winningNumber() {
     var player1Score = parseInt(getInputElem("score1").value);
     var player2Score = parseInt(getInputElem("score2").value);
-    if (player1Score >= 10) {
+    if (player1Score >= 100) {
         alert("Player 1 wins!");
     }
-    if (player2Score >= 10) {
+    if (player2Score >= 100) {
         alert("Player 2 wins!");
     }
 }
