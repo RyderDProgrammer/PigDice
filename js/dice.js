@@ -1,3 +1,9 @@
+window.onload = function () {
+    var newGameBtn = document.getElementById("new_game");
+    newGameBtn.onclick = createNewGame;
+    $("roll").onclick = rollDie;
+    $("hold").onclick = holdDie;
+};
 function generateRandomValue(minValue, maxValue) {
     minValue = Math.ceil(minValue);
     maxValue = Math.ceil(maxValue);
@@ -15,12 +21,6 @@ function changePlayers() {
         currentPlayerName.innerText = player1Name;
     }
 }
-window.onload = function () {
-    var newGameBtn = document.getElementById("new_game");
-    newGameBtn.onclick = createNewGame;
-    $("roll").onclick = rollDie;
-    $("hold").onclick = holdDie;
-};
 function createNewGame() {
     var goodGame = true;
     getInputElem("score1").value = "0";

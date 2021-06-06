@@ -1,3 +1,11 @@
+window.onload = function(){
+    let newGameBtn = document.getElementById("new_game");
+    newGameBtn.onclick = createNewGame;
+
+    $("roll").onclick = rollDie;
+    $("hold").onclick = holdDie;
+}
+
 function generateRandomValue(minValue:number, maxValue:number):number
 {
     minValue = Math.ceil(minValue);
@@ -23,14 +31,6 @@ function changePlayers():void{
     {
         currentPlayerName.innerText = player1Name;
     }
-}
-
-window.onload = function(){
-    let newGameBtn = document.getElementById("new_game");
-    newGameBtn.onclick = createNewGame;
-
-    $("roll").onclick = rollDie;
-    $("hold").onclick = holdDie;
 }
 
 function createNewGame()
