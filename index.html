@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="dice.css">
 </head>
 <body>
+    <script src="js/jscolor.js"></script>
     <main>
         <h1>Let's Play PIG!</h1>
         <fieldset>
@@ -20,19 +21,20 @@
         </fieldset>
         <label for="player1">Player 1</label>
             <input type="text" id="player1" >
+        Color: <input value="0" id="player1Color" data-jscolor="{}">
         <label for="score1">Score</label>
             <input type="text" id="score1" value="0" disabled><br>
         <label for="player2">Player 2</label>
             <input type="text" id="player2">  
+        Color: <input value="0" id="player2Color" data-jscolor="{}">
         <label for="score2">Score</label>
             <input type="text" id="score2" value="0" disabled>
         <input type="button" id="new_game" value="New Game"><br>
-            
+
         <section id="turn">
             <p><span id="current">&nbsp;</span>'s turn</p>
             <input type="button" id="roll" value="Roll">
             <input type="button" id="hold" value="Hold">
-    
             <label for="die">Die</label>
                 <input type="text" id="die" disabled>
             <label for="total">Total</label>
@@ -41,7 +43,6 @@
     </main>
     <div id="dice-box1"></div>
     <script src="https://unpkg.com/roll-a-die@1.3.0/dist/roll-a-die.js"></script>
-    <script src="js/jscolor.js"></script>
     <script src="js/dice.js"></script>
 </body>
 </html>

@@ -11,10 +11,11 @@ body {
 {
     margin-left: 225px;
 }
+/*Expanded main to fit color picker choice.*/
 main
 {
     margin: 0 auto;
-    width: 450px;
+    width: 550px;
     border: 3px solid blue;
     padding: 0 2em 1em;
 }
@@ -48,9 +49,10 @@ fieldset {
 #player1, #player2 {
     width: 10em;
 }
+/*Adjusted margin left to put button in middle of the box */
 #new_game {
     width: 6em;
-    margin-left: 1em;
+    margin-left: 15em;
 }
 #hold {
     margin-right: 2em;

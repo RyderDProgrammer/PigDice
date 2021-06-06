@@ -30,10 +30,12 @@ function createNewGame() {
         goodGame = false;
     }
     if (goodGame) {
-        document.getElementById("turn").classList.add("open");
+        $("turn").classList.add("open");
         getInputElem("total").value = "0";
-        document.getElementById("player1").setAttribute("disabled", "disabled");
-        document.getElementById("player2").setAttribute("disabled", "disabled");
+        $("player1").setAttribute("disabled", "disabled");
+        $("player2").setAttribute("disabled", "disabled");
+        $("player1Color").setAttribute("disabled", "disabled");
+        $("player2Color").setAttribute("disabled", "disabled");
         changePlayers();
     }
 }

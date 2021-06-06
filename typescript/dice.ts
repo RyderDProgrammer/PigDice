@@ -49,11 +49,13 @@ function createNewGame()
     //if both players do have a name start the game!
     if(goodGame)
     {
-        document.getElementById("turn").classList.add("open");
+        $("turn").classList.add("open");
         getInputElem("total").value = "0";
         //lock in player names and then change players
-        document.getElementById("player1").setAttribute("disabled", "disabled");
-        document.getElementById("player2").setAttribute("disabled", "disabled");
+        $("player1").setAttribute("disabled", "disabled");
+        $("player2").setAttribute("disabled", "disabled");
+        $("player1Color").setAttribute("disabled","disabled");
+        $("player2Color").setAttribute("disabled","disabled");
         changePlayers();
     }
 }
