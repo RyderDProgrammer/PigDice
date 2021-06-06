@@ -63,6 +63,15 @@ function rollDie():void
     let currTotal = parseInt(getInputElem("total").value);
     //roll the die and get a random value 1 - 6 (use generateRandomValue function)
     let diceRoll = generateRandomValue(1,6);
+    //Creating the visual die roll.
+    //Had to leave it as a - instead of camelcasing like I normally do
+    //otherwise the rollADie() doesn't like that.
+    const element = $("dice-box1");
+    const diceAmount = +1;
+    const values = diceRoll;
+    const options = {element,diceAmount,values,callback:response};
+    //@ts-ignore
+    rollADie(options)
     //if the roll is 1
     //  change players
     //  set current total to 0
@@ -83,6 +92,13 @@ function rollDie():void
     //display current total on form
     getInputElem("total").value = currTotal.toString();
 }
+//I tried looking into this with some research to try
+//and avoid this pointless function but unfortunately
+//I couldn't find anywhere to avoid it.
+function response(res) {
+    // returns an array of the values from the dice
+    console.log(res)
+  }
 
 function holdDie():void{
     //get the current turn total

@@ -40,6 +40,11 @@ function createNewGame() {
 function rollDie() {
     var currTotal = parseInt(getInputElem("total").value);
     var diceRoll = generateRandomValue(1, 6);
+    var element = $("dice-box1");
+    var diceAmount = +1;
+    var values = diceRoll;
+    var options = { element: element, diceAmount: diceAmount, values: values, callback: response };
+    rollADie(options);
     if (diceRoll == 1) {
         currTotal = 0;
         changePlayers();
@@ -49,6 +54,9 @@ function rollDie() {
     }
     getInputElem("die").value = diceRoll.toString();
     getInputElem("total").value = currTotal.toString();
+}
+function response(res) {
+    console.log(res);
 }
 function holdDie() {
     var currTotal = parseInt($("total").value);
