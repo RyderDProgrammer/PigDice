@@ -41,9 +41,9 @@ function rollDie() {
     var currTotal = parseInt(getInputElem("total").value);
     var diceRoll = generateRandomValue(1, 6);
     var element = $("dice-box1");
-    var diceAmount = +1;
-    var values = diceRoll;
-    var options = { element: element, diceAmount: diceAmount, values: values, callback: response };
+    var numberOfDice = +[1];
+    var values = [diceRoll];
+    var options = { element: element, numberOfDice: numberOfDice, values: values, callback: response };
     rollADie(options);
     if (diceRoll == 1) {
         currTotal = 0;

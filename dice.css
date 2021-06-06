@@ -1,6 +1,14 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: white;
+    /*Taking out for a test on the dice */
+    /* margin: 0 auto;
+    width: 450px;
+    border: 3px solid blue;
+    padding: 0 2em 1em; */
+}
+main
+{
     margin: 0 auto;
     width: 450px;
     border: 3px solid blue;

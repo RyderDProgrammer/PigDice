@@ -67,9 +67,10 @@ function rollDie():void
     //Had to leave it as a - instead of camelcasing like I normally do
     //otherwise the rollADie() doesn't like that.
     const element = $("dice-box1");
-    const diceAmount = +1;
-    const values = diceRoll;
-    const options = {element,diceAmount,values,callback:response};
+    //Needed to be an array so I just made it an array of 1.
+    const numberOfDice = +[1];
+    const values = [diceRoll];
+    const options = {element,numberOfDice,values,callback:response};
     //@ts-ignore
     rollADie(options)
     //if the roll is 1
