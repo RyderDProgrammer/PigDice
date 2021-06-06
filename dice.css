@@ -11,9 +11,11 @@ body {
 {
     margin-left: 225px;
 }
-/*Expanded main to fit color picker choice.*/
+/*Expanded main to fit color picker choice.
+Forcing white to not make the game terrible looking*/
 main
 {
+    background-color: white !important;
     margin: 0 auto;
     width: 550px;
     border: 3px solid blue;

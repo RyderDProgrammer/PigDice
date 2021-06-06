@@ -10,14 +10,21 @@ function generateRandomValue(minValue, maxValue) {
     var random = Math.floor(Math.random() * (maxValue - minValue + 1) + minValue);
     return random;
 }
+function changeColor(color) {
+    document.body.style.background = color;
+}
 function changePlayers() {
     var currentPlayerName = $("current");
     var player1Name = getInputElem("player1").value;
     var player2Name = getInputElem("player2").value;
+    var player1Color = getInputElem("player1Color").value;
+    var player2Color = getInputElem("player2Color").value;
     if (currentPlayerName.innerText == player1Name) {
+        changeColor(player2Color);
         currentPlayerName.innerText = player2Name;
     }
     else {
+        changeColor(player1Color);
         currentPlayerName.innerText = player1Name;
     }
 }

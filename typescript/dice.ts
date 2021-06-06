@@ -15,20 +15,29 @@ function generateRandomValue(minValue:number, maxValue:number):number
     return random;
 }
 
+function changeColor(color)
+{
+    document.body.style.background = color;
+}
 
 function changePlayers():void{
     let currentPlayerName = $("current");
     let player1Name = getInputElem("player1").value;
     let player2Name = getInputElem("player2").value;
+
+    let player1Color = getInputElem("player1Color").value;
+    let player2Color = getInputElem("player2Color").value;
     
     //swap from player to player by comparing current name to player names
     //set currentPlayerName to the next player
     if(currentPlayerName.innerText == player1Name)
     {
+        changeColor(player2Color);
         currentPlayerName.innerText = player2Name;
     }
     else
     {
+        changeColor(player1Color);
         currentPlayerName.innerText = player1Name;
     }
 }
