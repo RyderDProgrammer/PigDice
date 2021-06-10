@@ -33,10 +33,11 @@ function createNewGame() {
     getInputElem("score1").value = "0";
     getInputElem("score2").value = "0";
     if (getInputElem("player1").value == "" || getInputElem("player2").value == "") {
-        alert("Need 2 players names");
+        $("gameText").innerText = "Need 2 player names!";
         goodGame = false;
     }
     if (goodGame) {
+        $("gameText").innerText = "";
         $("turn").classList.add("open");
         getInputElem("total").value = "0";
         $("player1").setAttribute("disabled", "disabled");

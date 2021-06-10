@@ -52,12 +52,13 @@ function createNewGame()
     //if both players don't have a name display error
     if(getInputElem("player1").value == "" || getInputElem("player2").value == "")
     {
-        alert("Need 2 players names");
+        $("gameText").innerText = "Need 2 player names!";
         goodGame = false;
     }
     //if both players do have a name start the game!
     if(goodGame)
     {
+        $("gameText").innerText = "";
         $("turn").classList.add("open");
         getInputElem("total").value = "0";
         //lock in player names and then change players
