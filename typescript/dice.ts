@@ -152,7 +152,7 @@ function winningNumber()
 
     if(player1Score >= 10)
     {
-        alert("Player 1 wins!");
+        $("gameText").innerHTML = getInputElem("player1").value + " wins!";
         //player1Score = 0 doesnt work?
         getInputElem("score1").value = "0";
         getInputElem("score2").value = "0";
@@ -161,7 +161,7 @@ function winningNumber()
     }
     if(player2Score >= 10)
     {
-        alert("Player 2 wins!");
+        $("gameText").innerHTML = getInputElem("player2").value + " wins!";
         getInputElem("score1").value = "0";
         getInputElem("score2").value = "0";
     }
