@@ -150,7 +150,7 @@ function winningNumber()
     let player1Score = parseInt(getInputElem("score1").value);
     let player2Score = parseInt(getInputElem("score2").value);
 
-    if(player1Score >= 100)
+    if(player1Score >= 10)
     {
         alert("Player 1 wins!");
         //player1Score = 0 doesnt work?
@@ -159,7 +159,7 @@ function winningNumber()
         changePlayers();
 
     }
-    if(player2Score >= 100)
+    if(player2Score >= 10)
     {
         alert("Player 2 wins!");
         getInputElem("score1").value = "0";
