@@ -151,18 +151,18 @@ function winningNumber()
     let player1Score = parseInt(getInputElem("score1").value);
     let player2Score = parseInt(getInputElem("score2").value);
 
-    if(player1Score >= 10)
+    if(player1Score >= 100)
     {
-        $("gameText").innerHTML = getInputElem("player1").value + " wins!";
+        $("gameText").innerHTML = getInputElem("player1").value + " wins! The game has reset";
         //player1Score = 0 doesnt work?
         getInputElem("score1").value = "0";
         getInputElem("score2").value = "0";
         changePlayers();
 
     }
-    if(player2Score >= 10)
+    if(player2Score >= 100)
     {
-        $("gameText").innerHTML = getInputElem("player2").value + " wins!";
+        $("gameText").innerHTML = getInputElem("player2").value + " wins! The game has reset";
         getInputElem("score1").value = "0";
         getInputElem("score2").value = "0";
     }
