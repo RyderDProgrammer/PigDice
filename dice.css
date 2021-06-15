@@ -8,7 +8,8 @@ body {
 }
 #dice-box1
 {
-    margin-left: 425px;
+    margin: 0 auto;
+    width: 10%;
 }
 /*Expanded main to fit color picker choice.
 Forcing white to not make the game terrible looking*/
