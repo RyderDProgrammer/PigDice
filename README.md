@@ -5,4 +5,4 @@ background with it from JSColor.
 # Game Appearance
 ![alt text](https://raw.githubusercontent.com/RyderDProgrammer/PigDice/main/RyderDPigDice.PNG)
 
-The game looks like this when loaded and implements a dice roller library as well to roll a 3d dice right below the new game button
+The game looks like this when loaded and implements a dice roller library as well to roll a 3d dice right below the games blue border.
