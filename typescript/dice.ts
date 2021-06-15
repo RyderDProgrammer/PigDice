@@ -44,7 +44,7 @@ function changePlayers():void{
 
 function createNewGame()
 {
-    let goodGame = true;
+    let playerNamesSet = true;
     //set player 1 and player 2 scores to 0
     getInputElem("score1").value = "0";
     getInputElem("score2").value = "0";
@@ -53,10 +53,10 @@ function createNewGame()
     if(getInputElem("player1").value == "" || getInputElem("player2").value == "")
     {
         $("gameText").innerText = "Need 2 player names!";
-        goodGame = false;
+        playerNamesSet = false;
     }
     //if both players do have a name start the game!
-    if(goodGame)
+    if(playerNamesSet)
     {
         $("gameText").innerText = "";
         $("turn").classList.add("open");
